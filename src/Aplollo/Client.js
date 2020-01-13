@@ -1,4 +1,4 @@
-import ApolloClient from 'apollo-boost';
+import ApolloClient from "apollo-boost";
 import { defaults, resolvers } from "./LocalState";
 
 export default new ApolloClient({
@@ -6,5 +6,16 @@ export default new ApolloClient({
     clientState: {
         defaults,
         resolvers
+    },
+    // headers: {
+    //     Authorization: `Bearer ${localStorage.getItem("token")}`
+    // }
+    request: async operation => {
+        const token = await localStorage.getItem("token");
+        operation.setContext({
+            headers: {
+                Authorization: token ? `Bearer ${token}` : ''
+            }
+        });
     }
 });
