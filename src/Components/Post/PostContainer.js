@@ -24,9 +24,9 @@ const PostContainer = ({
             setTimeout(() => setCurrentItem(0), 3000);
         } else {
             setTimeout(() => setCurrentItem(currentItem + 1), 3000);
-        }                
+        } 
     }, [currentItem, files]);
-
+    console.log(currentItem);
     return (
         <PostPresenter 
             user={user}
@@ -58,7 +58,6 @@ PostContainer.propTypes = {
             url: PropTypes.string.isRequired
         })
     ).isRequired,
-
     likeCount: PropTypes.number.isRequired,
     isLiked: PropTypes.bool.isRequired,
     comments: PropTypes.arrayOf(

@@ -94,7 +94,7 @@ export default ({
     files,
     isLiked,
     likeCount,
-    createAt,
+    createdAt,
     newComment,
     currentItem
 }) => (
@@ -120,7 +120,7 @@ export default ({
                 </Button>
             </Buttons>
             <FatText text={likeCount === 1 ? "1 like" : `${likeCount} likes`} />
-            <Timestamp>{createAt}</Timestamp>
+            <Timestamp>{createdAt}</Timestamp>
             <Textarea placeholder={"Add a comment..."} {...newComment} />
         </Meta>
     </Post>
