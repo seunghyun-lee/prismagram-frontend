@@ -66,8 +66,7 @@ const HeaderLink = styled(Link)`
 export default withRouter(({ history }) => {
   const search = useInput("");
   const { data, loading } = useQuery(ME);
-  if (loading) return "";
-  console.log(data.me);
+  if (loading) return "";  
   const onSearchSubmit = e => {
     e.preventDefault();
     history.push(`/search?term=${search.value}`);

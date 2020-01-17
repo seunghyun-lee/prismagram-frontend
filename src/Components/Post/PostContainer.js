@@ -56,8 +56,7 @@ const PostContainer = ({
             try {
                 const {
                     data: { addComment }
-                } = await addCommentMutation();
-                console.log(addComment);
+                } = await addCommentMutation();                
                 setSelfComments([...selfComments, addComment]);
                 comment.setValue("");
             } catch {
